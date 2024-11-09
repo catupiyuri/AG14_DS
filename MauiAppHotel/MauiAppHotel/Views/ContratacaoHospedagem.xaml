@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#121212">
+
+    <ScrollView VerticalOptions="FillAndExpand">
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                             Padding="30"
+                             Spacing="20">
+
+            <Label Text="Hotel Xique Xique"
+                   FontFamily="Kalam"
+                   FontSize="50"
+                   TextColor="#FFCC00"
+                   HorizontalOptions="Center" />
+
+            <Frame Padding="15"
+                   CornerRadius="15"
+                   BackgroundColor="#1E1E1E"
+                   BorderColor="#333333">
+                <VerticalStackLayout>
+                    <Grid RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="*, *, 2*"
+                          Padding="5">
+
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Adultos:"
+                               TextColor="#FFFFFF"
+                               FontAttributes="Bold"/>
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               TextColor="#FFCC00"
+                               FontAttributes="Bold"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_adultos}" />
+
+                        <Stepper Grid.Row="0" Grid.Column="2"
+                                 x:Name="stp_adultos"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 BackgroundColor="#333333"/>
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Crianças:"
+                               TextColor="#FFFFFF"
+                               FontAttributes="Bold"/>
+
+                        <Label Grid.Row="1" Grid.Column="1"
+                               TextColor="#FFCC00"
+                               FontAttributes="Bold"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_criancas}" />
+
+                        <Stepper Grid.Row="1" Grid.Column="2"
+                                 x:Name="stp_criancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 BackgroundColor="#333333"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Padding="15"
+                   CornerRadius="15"
+                   BackgroundColor="#1E1E1E"
+                   BorderColor="#333333">
+                <VerticalStackLayout>
+                    <Label Text="Escolha sua Suíte"
+                           TextTransform="Uppercase"
+                           FontSize="Subtitle"
+                           TextColor="#FFCC00"
+                           Margin="0,10,0,5" />
+
+                    <Picker x:Name="pck_quarto"
+                            Title="Selecione sua Acomodação"
+                            ItemDisplayBinding="{Binding Descricao}"
+                            TextColor="#FFFFFF"
+                            BackgroundColor="#2A2A2A"
+                            Margin="0,5,0,10"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame Padding="15"
+                   CornerRadius="15"
+                   BackgroundColor="#1E1E1E"
+                   BorderColor="#333333">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Período da Estadia"
+                           TextTransform="Uppercase"
+                           FontSize="Subtitle"
+                           TextColor="#FFCC00"
+                           Margin="0,10,0,5"/>
+
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                        <Label Text="Check-in:" TextColor="#FFFFFF" />
+                        <DatePicker x:Name="dtpck_checkin"
+                                    DateSelected="dtpck_checkin_DateSelected"
+                                    Format="dd/MM/yyyy"
+                                    TextColor="#FFFFFF"
+                                    BackgroundColor="#2A2A2A"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                        <Label Text="Check-out:" TextColor="#FFFFFF" />
+                        <DatePicker x:Name="dtpck_checkout"
+                                    Format="dd/MM/yyyy"
+                                    TextColor="#FFFFFF"
+                                    BackgroundColor="#2A2A2A"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Avançar"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="#FFCC00"
+                    CornerRadius="20"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Padding="10"
+                    Margin="0,30,0,0"
+                    Clicked="Button_Clicked" />
+
+
+            <Button Text="Sobre o Hotel"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="#333333"
+                    CornerRadius="20"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Padding="10"
+                    Margin="0,10,0,0"
+                    Clicked="GoToAboutHotelPage" />
+
+
+            <Button Text="Sobre o Aplicativo"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="#333333"
+                    CornerRadius="20"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    Padding="10"
+                    Margin="0,10,0,0"
+                    Clicked="GoToAboutAppPage" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

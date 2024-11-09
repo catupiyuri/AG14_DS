@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.AboutHotel"
+             Title="Sobre o Aplicativo"
+             BackgroundColor="#121212">
+
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <Label Text="Sobre o Hotel"
+               FontSize="30"
+               TextColor="#FFCC00"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Label Text="Este aplicativo foi desenvolvido para facilitar a contratação de hospedagem no Hotel Xique-Xique."
+               TextColor="#FFFFFF"
+               FontSize="18"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
+
+
+        <Frame WidthRequest="150" HeightRequest="150" CornerRadius="75" Padding="0" HorizontalOptions="Center">
+            <Image Source="https://www.kayak.com.br/news/wp-content/uploads/sites/12/2023/08/THEME_HOTEL_SIGN_FIVE_STARS_FACADE_BUILDING_GettyImages-1320779330-3.jpg" Aspect="AspectFill"/>
+        </Frame>
+        
+        <Button Text="Voltar"
+                TextColor="#FFFFFF"
+                BackgroundColor="#FFCC00"
+                CornerRadius="20"
+                FontSize="18"
+                FontAttributes="Bold"
+                Padding="10"
+                Margin="0,20,0,0"
+                Clicked="OnBackButtonClicked" />
+
+        <Button Text="Ver no Google Maps"
+                TextColor="#FFFFFF"
+                BackgroundColor="#333333"
+                CornerRadius="20"
+                FontSize="18"
+                FontAttributes="Bold"
+                Padding="10"
+                Margin="0,10,0,0"
+                Clicked="OnMapLinkTapped" />
+
+    </VerticalStackLayout>
+</ContentPage>
